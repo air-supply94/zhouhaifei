@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "typeRoots": ["node_modules/@types"],
     "outDir": "dist", // 指定输出目录
-    "module": "esnext",
-    "target": "es6", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
     "lib": ["esnext", "dom"],
     "baseUrl": ".", // 用于解析非相对模块名称的基目录
     "jsx": "react", // 指定 jsx 代码的生成: 'preserve', 'react-native', or 'react'
-    "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入
     "moduleResolution": "node", // 选择模块解析策略： 'node' (Node.js) or 'classic' (TypeScript pre-1.6)
+    "module": "esnext",
+    "target": "es6", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
+    "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入
     "allowJs": true, // 允许编译 javascript 文件
-    "isolatedModules": false, //将每个文件作为单独的模块
+    "isolatedModules": true, //将每个文件作为单独的模块
+    "useDefineForClassFields": false,
     "experimentalDecorators": true, //启用实验性的ES装饰器
     "emitDecoratorMetadata": false, //给源码里的装饰器声明加上设计类型元数据
     "strictNullChecks": false, //在严格的 null检查模式下， null和 undefined值不包含在任何类型里，只允许用它们自己和 any来赋值（有个例外， undefined可以赋值到 void）

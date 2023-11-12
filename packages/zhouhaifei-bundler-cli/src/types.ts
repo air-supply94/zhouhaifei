@@ -51,6 +51,10 @@ export enum CodeSplit {
 }
 
 interface BaseConfig {
+  transpiler?: keyof typeof Transpiler;
+  esbuildLoaderOptions?: EsbuildOptions;
+  babelLoaderOptions?: Record<string, any>;
+  extraJsModuleIncludes?: Array<string | RegExp>;
   publicDir?: string;
   open?: boolean;
   port?: number;
@@ -93,14 +97,11 @@ interface StyleConfig {
 }
 
 export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptions {
-  transpiler?: keyof typeof Transpiler;
+  nocompress?: boolean;
   jsMinifier?: keyof typeof JSMinifier;
-  cssMinifier?: keyof typeof CSSMinifier;
   jsMinifierOptions?: EsbuildOptions | TerserOptions;
+  cssMinifier?: keyof typeof CSSMinifier;
   cssMinifierOptions?: EsbuildOptions | CssNanoOptions | Record<string, any>;
-  esbuildLoaderOptions?: EsbuildOptions;
-  babelLoaderOptions?: Record<string, any>;
-  extraJsModuleIncludes?: Array<string | RegExp>;
   threadLoaderOptions?: Record<string, any>;
   codeSplitting?: keyof typeof CodeSplit;
   sourcemap?: Config.DevTool;
@@ -115,7 +116,6 @@ export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptio
   ) => void | Promise<void>;
   analyzer?: BundleAnalyzerPlugin.Options;
   analyzerPort?: number;
-  nocompress?: boolean;
   manifestOptions?: ManifestPluginOptions;
   ignoreMomentLocale?: boolean;
   copy?: CopyOptions[] | string[];

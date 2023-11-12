@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/react-demo",
-  "version": "2.27.0",
+  "version": "3.0.0",
   "private": true,
   "dependencies": {
     "nprogress": "0.2.0",

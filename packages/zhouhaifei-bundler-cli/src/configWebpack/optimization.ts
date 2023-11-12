@@ -23,11 +23,13 @@ export function optimization({
     case CodeSplit.depPerChunk:
       config.optimization.splitChunks({
         chunks: 'all',
+        minChunks: 2,
         cacheGroups: {
           vendors: {
             test: /[\\/]node_modules[\\/]/,
             priority: 10,
             chunks: 'all',
+            minChunks: 2,
             name(module) {
               const path = module.context.replace(/.pnpm[\\/]/, '');
               const match = path.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/);
@@ -58,6 +60,7 @@ export function optimization({
       ];
       config.optimization.splitChunks({
         chunks: 'all',
+        minChunks: 2,
         cacheGroups: {
           default: false,
           defaultVendors: false,
@@ -68,6 +71,8 @@ export function optimization({
                 '|'
               )})[\\\\/]`
             ),
+            chunks: 'all',
+            minChunks: 1,
             priority: 40,
             enforce: true,
           },
@@ -107,6 +112,7 @@ export function optimization({
             priority: 30,
             reuseExistingChunk: true,
             chunks: 'all',
+            minChunks: 2,
           },
           shared: {
             name(_module: any, chunks: any) {
@@ -127,9 +133,9 @@ export function optimization({
               return `shared-${cryptoName}`;
             },
             priority: 10,
-            minChunks: 2,
             reuseExistingChunk: true,
             chunks: 'all',
+            minChunks: 2,
           },
         },
       });

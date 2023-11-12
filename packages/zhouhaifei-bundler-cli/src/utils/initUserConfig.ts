@@ -11,7 +11,7 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   userConfig.host ||= cliOptions.host || process.env.HOST || '0.0.0.0';
   userConfig.port ||= parseInt(cliOptions.port, 10) || parseInt(process.env.PORT, 10) || 3000;
 
-  userConfig.nocompress ||= process.env.COMPRESS === 'none';
+  userConfig.nocompress ||= process.env.COMPRESS === '1';
   userConfig.analyzer ||= process.env.ANALYZE === '1';
   userConfig.analyzerPort ||= parseInt(process.env.ANALYZE_PORT, 10) || 8888;
   userConfig.publicPath ||= process.env.PUBLIC_URL || '/';
@@ -20,6 +20,10 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   userConfig.outputPath ||= DEFAULT_OUTPUT_PATH;
   userConfig.externals ||= {};
   userConfig.alias ||= {};
+  if (userConfig.alias['@'] == null) {
+    userConfig.alias['@'] = path.resolve(cwd, 'src');
+  }
+
   userConfig.staticPathPrefix ||= 'static/';
   userConfig.codeSplitting ||= CodeSplit.granularChunks;
   userConfig.antd ||= {};

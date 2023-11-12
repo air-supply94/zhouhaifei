@@ -7,36 +7,26 @@
   <meta name="description" content="app"/>
   <title>app</title>
   <link rel="icon" href="<%= process.env.PUBLIC_URL %>favicon.ico">
-  <% if (process.env.SERVICE_WORKER === 'YES') { %>
-  <link rel="manifest" href="<%= process.env.PUBLIC_URL %>manifest.json" crossorigin="anonymous"/>
-  <% } %>
-  <% if (process.env.REACT_APP_NPROGRESS === 'YES') { %>
-  <link href="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <% } %>
 </head>
 <body>
-<noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
-<% if (process.env.REACT_APP_NPROGRESS === 'YES') { %>
-<script src="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
-<script>
-  NProgress.start();
-</script>
-<% } %>
 <% if (process.env.NODE_ENV === 'development') { %>
 <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/react/18.2.0/umd/react.development.js"></script>
 <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/mobx/5.15.7/mobx.umd.min.js"></script>
+<script type="text/javascript" src="https://hw-front.ejingling.cn/customer-source/common/mobxReactLite.development.min.js?v=2.2.2"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/mobx-react/6.3.1/mobxreact.umd.development.js"></script>
 <% } %>
 <% if (process.env.NODE_ENV === 'production') { %>
 <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/mobx/5.15.7/mobx.umd.min.js"></script>
+<script type="text/javascript" src="https://hw-front.ejingling.cn/customer-source/common/mobxReactLite.production.min.js?v=2.2.2"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/mobx-react/6.3.1/mobxreact.umd.production.min.js"></script>
 <% } %>
-<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.min.js"></script>
 <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
-<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/qs/6.11.0/qs.min.js"></script>
-<% if (process.env.IS_VITE === 'YES') { %>
-<script type="module" src="/src/index.tsx"></script>
-<% } %>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/qs/6.11.2/qs.min.js"></script>
 </body>
 </html>
