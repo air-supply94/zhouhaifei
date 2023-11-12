@@ -1,21 +1,23 @@
 {
   "dependencies": {
-    "antd": "5.2.1",
+    "nprogress": "0.2.0",
+    "antd": "4.24.14",
     "axios": "0.27.2",
     "lodash": "4.17.21",
     "mobx": "5.15.7",
     "mobx-react": "6.3.1",
-    "moment": "2.29.4",
-    "qs": "6.11.0",
+    "moment": "2.29.2",
+    "qs": "6.11.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "6.3.0"
+    "react-router-dom": "6.18.0"
   },
   "devDependencies": {
+    "@types/nprogress": "0.2.2",
     "@commitlint/cli": "11.0.0",
     "@types/lodash": "4.14.165",
     "@types/mockjs": "1.0.3",
-    "@types/node": "14.14.10",
+    "@types/node": "16.18.61",
     "@types/qs": "6.9.5",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
@@ -25,16 +27,11 @@
     "husky": "4.3.0",
     "lint-staged": "10.5.2",
     "mockjs": "1.1.0",
-    "postcss": "8.3.11",
     "prettier": "2.2.1",
     "stylelint": "13.13.1",
-    "typescript": "4.2.4",
     "validate-commit-msg": "2.14.0",
-    "@zhouhaifei/code-style": "2.28.0",
-    "@zhouhaifei/pc-config": "2.28.0",
-    "@zhouhaifei/react-scripts": "2.28.0",
-    "@zhouhaifei/vite-config": "2.28.0",
-    "vite": "4.4.5"
+    "@zhouhaifei/bundler-cli": "3.0.1",
+    "@zhouhaifei/code-style": "3.0.1"
   },
   "config": {
     "commitizen": {
@@ -42,15 +39,8 @@
     }
   },
   "engines": {
-    "node": ">= 16"
+    "node": ">= 16.20"
   },
-  "browserslist": [
-    "> 0.2%",
-    "Chrome >= 60",
-    "Firefox >= 60",
-    "Edge >= 16",
-    "Safari >= 10.1"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "git add . && lint-staged",
@@ -77,9 +67,9 @@
   },
   "scripts": {
     "commit": "cz",
-    "start-vite": "vite",
-    "start": "zhouhaifei-react-scripts start",
-    "build": "zhouhaifei-react-scripts build",
+    "dev-vite": "zhouhaifei-bundler-cli dev --vite --open",
+    "dev-webpack": "zhouhaifei-bundler-cli dev --open",
+    "build": "zhouhaifei-bundler-cli build",
     "lint-staged": "lint-staged --allow-empty",
     "lint:style-less": "stylelint --cache --quiet --fix \"src/**/*.less\" --syntax less",
     "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",

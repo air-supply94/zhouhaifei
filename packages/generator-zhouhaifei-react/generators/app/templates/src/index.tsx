@@ -4,16 +4,16 @@ import { BrowserRouter } from 'react-router-dom';
 import './global.less';
 import { RenderRoutes } from './routes';
 import { Locale } from './utils';
+import NProgress from 'nprogress';
 
 render();
 
 function render() {
+  NProgress.start();
+
   function Internal() {
     React.useLayoutEffect(() => {
-      if (process.env.REACT_APP_NPROGRESS === 'YES') {
-        // @ts-ignore
-        NProgress.done();
-      }
+      NProgress.done();
     }, []);
 
     return (
@@ -25,18 +25,17 @@ function render() {
     );
   }
 
-  createRoot(document.getElementById('root')).render(<Internal/>);
+  createRoot(document.getElementById('root'))
+    .render(<Internal/>);
 }
 
-// @ts-ignore
-if (typeof module !== 'undefined' && module.hot) {
-  // @ts-ignore
-  module.hot.accept(render);
-}
-
-// .env.development配置相关环境变量
-if (process.env.IS_VITE === 'YES') {
-  // @ts-ignore
-  import.meta.hot.accept();
+if (process.env.NODE_ENV === 'development') {
+  if (process.env.CLI_TOOL === 'vite') {
+    // @ts-ignore1
+    import.meta.hot.accept();
+  } else if (process.env.CLI_TOOL === 'webpack') {
+    // @ts-ignore
+    module.hot.accept(render);
+  }
 }
 

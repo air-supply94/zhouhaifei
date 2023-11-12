@@ -118,9 +118,9 @@ export function getBabelConfig({
     ].concat(babelExtraPreset)
       .filter(Boolean),
     plugins: [
-      // 支持装饰器语法
+      // 支持styled-components
       babelPluginStyledComponents && [
-        require.resolve('@babel/plugin-proposal-decorators'),
+        require.resolve('@babel-plugin-styled-components'),
         babelPluginDecorators,
       ],
 

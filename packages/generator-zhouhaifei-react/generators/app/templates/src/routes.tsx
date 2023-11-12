@@ -6,10 +6,10 @@ import { NoPage } from './compnents/noPage';
 
 const Dashboard = React.lazy(() => import('./pages/dashboard'));
 
-export interface MenuDataItem extends RouteObject {
+export type MenuDataItem = {
   name?: string;
   children?: MenuDataItem[];
-}
+} & RouteObject;
 
 export const routes: MenuDataItem[] = [
   {

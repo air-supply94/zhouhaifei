@@ -5,7 +5,7 @@ export function ignorePlugin({
   config,
   userConfig: { ignoreMomentLocale },
 }: WebpackApplyOptions) {
-  if (ignoreMomentLocale) {
+  if (ignoreMomentLocale !== false) {
     config.plugin('ignore-moment-locale').use(webpack.IgnorePlugin, [
       {
         resourceRegExp: /^\.\/locale$/,

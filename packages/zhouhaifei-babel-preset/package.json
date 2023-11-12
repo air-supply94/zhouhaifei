@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/babel-preset",
-  "version": "2.28.1",
+  "version": "3.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -40,6 +40,7 @@
     "build:deps": "father prebundle"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
