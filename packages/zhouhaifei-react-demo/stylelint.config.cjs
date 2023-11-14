@@ -1,1 +1,1 @@
-module.exports = require('@zhouhaifei/code-style').stylelintRules;
+module.exports = require('@zhouhaifei/code-style').stylelint;

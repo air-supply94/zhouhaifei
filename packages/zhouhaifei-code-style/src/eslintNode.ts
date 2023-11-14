@@ -2,7 +2,7 @@ import { eslintBaseRules } from './eslintBaseRules';
 import { eslintImportRules } from './eslintImportRules';
 import { eslintTypescriptRules } from './eslintTypescriptRules';
 
-export const eslintNodeRules = {
+export const eslintNode = {
   root: true,
   parser: 'babel-eslint',
   extends: ['eslint:recommended'],

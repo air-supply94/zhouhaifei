@@ -1,4 +1,4 @@
-export const stylelintRules = {
+export const stylelint = {
   extends: [
     require.resolve('stylelint-config-css-modules'),
     require.resolve('stylelint-config-prettier'),
