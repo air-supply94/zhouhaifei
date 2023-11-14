@@ -1,1 +1,4 @@
-module.exports = require('@zhouhaifei/code-style').eslintReact;
+module.exports = {
+  extends: require.resolve('@zhouhaifei/code-style/eslintReact'),
+  rules: {}
+};

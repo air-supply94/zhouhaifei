@@ -27,8 +27,8 @@
     "lint-staged": "10.5.2",
     "mockjs": "1.1.0",
     "validate-commit-msg": "2.14.0",
-    "@zhouhaifei/bundler-cli": "3.0.5",
-    "@zhouhaifei/code-style": "3.0.5"
+    "@zhouhaifei/bundler-cli": "3.0.6",
+    "@zhouhaifei/code-style": "3.0.6"
   },
   "engines": {
     "node": ">= 16.20"
