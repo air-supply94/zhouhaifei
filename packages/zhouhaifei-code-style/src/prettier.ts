@@ -1,4 +1,4 @@
-export const prettierRules = {
+export const prettier = {
   printWidth: 180,
   tabWidth: 2,
   useTabs: false,

@@ -1,6 +1,6 @@
-export { eslintReactRules } from './eslintReact';
-export { prettierRules } from './prettierRules';
-export { stylelintRules } from './stylelintRule';
-export { commitLintRules } from './commitLintRules';
-export { eslintNodeRules } from './eslintNodeRules';
+export { eslintReact } from './eslintReact';
+export { prettier } from './prettier';
+export { stylelint } from './stylelint';
+export { commitlint } from './commitlint';
+export { eslintNode } from './eslintNode';
 

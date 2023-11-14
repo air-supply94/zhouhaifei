@@ -3,7 +3,7 @@ import { eslintImportRules } from './eslintImportRules';
 import { eslintJsxAndHooksRules } from './eslintJsxAndHooksRules';
 import { eslintTypescriptRules } from './eslintTypescriptRules';
 
-export const eslintReactRules = {
+export const eslintReact = {
   root: true,
   parser: 'babel-eslint',
   extends: ['eslint:recommended'],
